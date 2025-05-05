@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Selection Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .photo-option {
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .photo-option input[type="radio"] {
+      display: none;
+    }
+
+    .photo-option img {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    .photo-option input[type="radio"]:checked + img {
+      border-color: #4CAF50;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      margin-top: 20px;
+      resize: vertical;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Select a Photo and Add a Caption</h1>
+
+  <form action="/submit" method="POST">
+    <div class="gallery">
+      <label class="photo-option">
+        <input type="radio" name="photo" value="photo1">
+        <img src="/photos/pexels-effemix-24024088.jpg" alt="Photo 1">
+      </label>
+
+      <label class="photo-option">
+        <input type="radio" name="photo" value="photo2">
+        <img src="/photos/pexels-jan-van-der-wolf-11680885-30007522.jpg" alt="Photo 2">
+      </label>
+
+      <label class="photo-option">
+        <input type="radio" name="photo" value="photo3">
+        <img src="/photos/pexels-karadageda0-31819744.jpg" alt="Photo 3">
+      </label>
+    </div>
+
+    <label for="caption"><strong>Caption:</strong></label>
+    <textarea id="caption" name="caption" placeholder="Write a caption for your selected photo..."></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>
